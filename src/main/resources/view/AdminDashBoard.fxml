@@ -5,15 +5,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="552.0" prefWidth="858.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.serenity.controllers.AdminDashBoardController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.serenity.controllers.AdminDashBoardController">
    <children>
       <Button layoutX="33.0" layoutY="86.0" mnemonicParsing="false" onAction="#onActionTherapist" prefHeight="84.0" prefWidth="126.0" text="Therapist" />
       <Button layoutX="33.0" layoutY="192.0" mnemonicParsing="false" onAction="#onActionTherapyPrograms" prefHeight="84.0" prefWidth="126.0" text="Therapy programs" />
       <Button layoutX="33.0" layoutY="293.0" mnemonicParsing="false" onAction="#onActionPatientHistory" prefHeight="84.0" prefWidth="126.0" text="Patient History" />
       <Button layoutX="33.0" layoutY="394.0" mnemonicParsing="false" onAction="#onActionChangeCredentails" prefHeight="84.0" prefWidth="126.0" text="Change Credentails" />
-      <AnchorPane fx:id="optionAchorpane" layoutX="200.0" prefHeight="554.0" prefWidth="659.0" style="-fx-background-color: #bdc3c7;">
+      <AnchorPane fx:id="optionAnchorPane" layoutX="300.0" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #95a5a6;">
          <children>
-            <Label layoutX="236.0" layoutY="8.0" prefHeight="35.0" prefWidth="202.0" text="Admin Dashborad">
+            <Label layoutX="204.0" layoutY="14.0" text="Admin DashBoard">
                <font>
                   <Font size="24.0" />
                </font>

@@ -13,7 +13,7 @@ import java.io.IOException;
 public class AdminDashBoardController {
 
     @FXML
-    public AnchorPane optionAchorpane;
+    public AnchorPane optionAnchorPane;
 
     @FXML
     void onActionChangeCredentails(ActionEvent event) {
