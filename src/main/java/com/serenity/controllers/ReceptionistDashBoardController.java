@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -13,23 +14,34 @@ import java.io.IOException;
 public class ReceptionistDashBoardController {
 
     @FXML
-    void onActionPatients(ActionEvent event) {
+    private AnchorPane optionAnchorPane;
 
+    @FXML
+    void onActionPatients(ActionEvent event) throws IOException {
+        optionAnchorPane.getChildren().clear();
+        Parent load = FXMLLoader.load(getClass().getResource("/view/PatientForm.fxml"));
+        optionAnchorPane.getChildren().add(load);
     }
 
     @FXML
-    void onActionPaymentHistory(ActionEvent event) {
-
+    void onActionPaymentHistory(ActionEvent event) throws IOException {
+        optionAnchorPane.getChildren().clear();
+        Parent load = FXMLLoader.load(getClass().getResource("/view/PatientTherapyHistory.fxml"));
+        optionAnchorPane.getChildren().add(load);
     }
 
     @FXML
-    void onActionPayments(ActionEvent event) {
-
+    void onActionPayments(ActionEvent event) throws IOException {
+        optionAnchorPane.getChildren().clear();
+        Parent load = FXMLLoader.load(getClass().getResource("/view/PaymentForm.fxml"));
+        optionAnchorPane.getChildren().add(load);
     }
 
     @FXML
-    void onActionTherapySessions(ActionEvent event) {
-
+    void onActionTherapySessions(ActionEvent event) throws IOException {
+        optionAnchorPane.getChildren().clear();
+        Parent load = FXMLLoader.load(getClass().getResource("/view/TherapySessionForm.fxml"));
+        optionAnchorPane.getChildren().add(load);
     }
 
     public void onActionLoginForm(ActionEvent actionEvent) throws IOException {

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.serenity.controllers.PatientFormController">
+   <children>
+      <Label layoutX="282.0" layoutY="14.0" text="Patient Form">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="36.0" layoutY="75.0" text="Patient Id :" />
+      <Label fx:id="lblPatientId" layoutX="107.0" layoutY="75.0" prefHeight="24.0" prefWidth="90.0" />
+      <TextField fx:id="txtname" layoutX="105.0" layoutY="111.0" prefHeight="26.0" prefWidth="196.0" />
+      <Label layoutX="38.0" layoutY="115.0" text="name" />
+      <Label layoutX="38.0" layoutY="208.0" text="Phone no" />
+      <TextField fx:id="txtPhoneno" layoutX="107.0" layoutY="204.0" prefHeight="26.0" prefWidth="196.0" />
+      <Label layoutX="39.0" layoutY="162.0" text="gender" />
+      <TextField fx:id="txtgender" layoutX="105.0" layoutY="157.0" prefHeight="26.0" prefWidth="196.0" />
+      <TableView fx:id="tblPatient" layoutX="13.0" layoutY="263.0" prefHeight="200.0" prefWidth="679.0">
+        <columns>
+          <TableColumn fx:id="colPatientId" prefWidth="103.99996757507324" text="Patient Id" />
+          <TableColumn fx:id="colname" prefWidth="228.8000259399414" text="name" />
+            <TableColumn fx:id="colgender" prefWidth="116.800048828125" text="gender" />
+            <TableColumn fx:id="colPhoneno" prefWidth="230.39999389648438" text="Phone no" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

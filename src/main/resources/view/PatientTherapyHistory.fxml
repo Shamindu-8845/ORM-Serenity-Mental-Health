@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.serenity.controllers.PatientTherapyHistoryController">
+   <children>
+      <Label layoutX="226.0" layoutY="24.0" text="Patient Therapy History">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblPatientTherapyHistory" layoutX="35.0" layoutY="169.0" prefHeight="200.0" prefWidth="630.0">
+        <columns>
+          <TableColumn fx:id="colTherapy" prefWidth="103.20001983642578" text="Therapy" />
+          <TableColumn fx:id="colPatient" prefWidth="120.0" text="Patient" />
+            <TableColumn fx:id="colProgram" prefWidth="125.60003662109375" text="Program" />
+            <TableColumn fx:id="colCost" prefWidth="112.0" text="Cost" />
+            <TableColumn fx:id="colDescription" prefWidth="167.99996948242188" text="Description" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.serenity.controllers.TherapySessionFormController">
+   <children>
+      <Label layoutX="226.0" layoutY="14.0" text="Therapy Session Form">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="72.0" layoutY="75.0" prefHeight="18.0" prefWidth="47.0" text="Id :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblId" layoutX="119.0" layoutY="72.0" prefHeight="26.0" prefWidth="90.0" />
+      <ComboBox fx:id="cmbProgramId" layoutX="192.0" layoutY="115.0" prefWidth="150.0" promptText="Program" />
+      <Label layoutX="68.0" layoutY="119.0" text="Program id:" />
+      <Label layoutX="67.0" layoutY="169.0" text="Therapist Id:" />
+      <ComboBox fx:id="cmbTherapistId" layoutX="192.0" layoutY="165.0" prefWidth="150.0" promptText="Therapist" />
+      <Label layoutX="70.0" layoutY="212.0" text="Patient Id:" />
+      <ComboBox fx:id="cmbPatientId" layoutX="192.0" layoutY="208.0" prefWidth="150.0" promptText="Patient" />
+      <Label layoutX="69.0" layoutY="264.0" text="Session date" />
+      <TextField fx:id="txtSessionDate" layoutX="192.0" layoutY="260.0" promptText="2025/04/20" />
+      <Button layoutX="137.0" layoutY="318.0" mnemonicParsing="false" onAction="#onActionSave" prefHeight="26.0" prefWidth="110.0" text="Save" />
+      <Button layoutX="286.0" layoutY="318.0" mnemonicParsing="false" onAction="#onActionReset" prefHeight="26.0" prefWidth="110.0" text="Reset" />
+   </children>
+</AnchorPane>

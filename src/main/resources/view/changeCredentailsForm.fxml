@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="464.0" prefWidth="414.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.serenity.controllers.ChangeCredentailsFormController">
+   <children>
+      <Label layoutX="140.0" layoutY="24.0" text="Change Credentails Form" />
+      <Label layoutX="58.0" layoutY="105.0" text="Name" />
+      <Label layoutX="57.0" layoutY="146.0" text="Passowrod" />
+      <TextField fx:id="txtname" layoutX="139.0" layoutY="102.0" promptText="name" />
+      <TextField fx:id="txtpassword" layoutX="140.0" layoutY="142.0" promptText="password" />
+      <ComboBox fx:id="cmbJobRoll" layoutX="139.0" layoutY="194.0" prefWidth="150.0" promptText="JobRoll" />
+      <Button layoutX="127.0" layoutY="260.0" mnemonicParsing="false" onAction="#onActionSave" prefHeight="35.0" prefWidth="159.0" text="Save" />
+      <Label layoutX="59.0" layoutY="198.0" text="JobRoll" />
+   </children>
+</AnchorPane>

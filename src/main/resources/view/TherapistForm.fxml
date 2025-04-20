@@ -8,15 +8,14 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="554.0" prefWidth="659.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.serenity.controllers.TherapistFormController">
+<AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.serenity.controllers.TherapistFormController">
    <children>
       <Label layoutX="270.0" layoutY="22.0" text="Therapist Mange Form" />
-      <TextField fx:id="txtname" layoutX="63.0" layoutY="108.0" promptText="name" />
-      <TextField fx:id="txtPhone" layoutX="63.0" layoutY="151.0" promptText="phone" />
+      <TextField fx:id="txtname" layoutX="122.0" layoutY="104.0" promptText="name" />
+      <TextField fx:id="txtPhone" layoutX="122.0" layoutY="151.0" promptText="phone" />
       <Button fx:id="btnSave" layoutX="187.0" layoutY="277.0" mnemonicParsing="false" onAction="#onActionSave" text="Save" />
       <Button fx:id="btnRefresh" layoutX="244.0" layoutY="277.0" mnemonicParsing="false" onAction="#onActionRefresh" text="Refresh" />
-      <ComboBox fx:id="cmbPrograms" layoutX="62.0" layoutY="199.0" prefWidth="150.0" promptText="Programs" />
+      <ComboBox fx:id="cmbPrograms" layoutX="121.0" layoutY="198.0" onAction="#onActionPrograms" prefWidth="150.0" promptText="Programs" />
       <TableView fx:id="tblTherapist" layoutX="101.0" layoutY="323.0" prefHeight="200.0" prefWidth="407.0">
         <columns>
           <TableColumn fx:id="colname" prefWidth="116.0000057220459" text="name" />
@@ -24,5 +23,10 @@
             <TableColumn fx:id="colPrograms" prefWidth="148.79998779296875" text="Program" />
         </columns>
       </TableView>
+      <Label layoutX="63.0" layoutY="65.0" text="Id :" />
+      <Label fx:id="lblId" layoutX="87.0" layoutY="60.0" prefHeight="26.0" prefWidth="120.0" />
+      <Label layoutX="62.0" layoutY="108.0" text="name" />
+      <Label layoutX="63.0" layoutY="155.0" text="phone" />
+      <Label layoutX="63.0" layoutY="202.0" text="program" />
    </children>
 </AnchorPane>

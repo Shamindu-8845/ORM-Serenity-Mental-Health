@@ -19,7 +19,7 @@
             <Font size="11.0" />
          </font>
       </Button>
-      <AnchorPane layoutX="200.0" prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: #95a5a6;">
+      <AnchorPane fx:id="optionAnchorPane" layoutX="200.0" prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: #95a5a6;">
          <children>
             <Label layoutX="285.0" layoutY="14.0" text="Receptionist">
                <font>

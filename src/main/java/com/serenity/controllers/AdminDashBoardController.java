@@ -18,24 +18,34 @@ public class AdminDashBoardController {
     public AnchorPane optionAnchorPane;
 
     @FXML
-    void onActionChangeCredentails(ActionEvent event) {
-
+    void onActionChangeCredentails(ActionEvent event) throws IOException{
+        Parent load = FXMLLoader.load(getClass().getResource("/view/changeCredentailsForm.fxml"));
+        Stage stage = new Stage();
+        Scene scene = new Scene(load);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
-    void onActionPatientHistory(ActionEvent event) {
-
+    void onActionPatientHistory(ActionEvent event) throws IOException {
+        optionAnchorPane.getChildren().clear();
+        Parent load = FXMLLoader.load(getClass().getResource("/view/PatientHistoryForm.fxml"));
+        optionAnchorPane.getChildren().add(load);
     }
 
     @FXML
     void onActionTherapist(ActionEvent event) throws IOException {
-
+       optionAnchorPane.getChildren().clear();
+        Parent load = FXMLLoader.load(getClass().getResource("/view/TherapistForm.fxml"));
+        optionAnchorPane.getChildren().add(load);
     }
 
 
     @FXML
-    void onActionTherapyPrograms(ActionEvent event) {
-
+    void onActionTherapyPrograms(ActionEvent event) throws IOException {
+        optionAnchorPane.getChildren().clear();
+        Parent load = FXMLLoader.load(getClass().getResource("/view/TherapyProgramForm.fxml"));
+        optionAnchorPane.getChildren().add(load);
     }
 
     public void onActionLoginForm(ActionEvent actionEvent) throws IOException {
