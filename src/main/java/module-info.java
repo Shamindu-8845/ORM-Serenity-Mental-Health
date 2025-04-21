@@ -8,10 +8,12 @@ module Serenity.Mental.Health {
     requires java.sql;
     requires jakarta.persistence;
     requires static lombok;
+    requires com.jfoenix;
 
     opens com.serenity.controllers to javafx.fxml;
     opens com.serenity to javafx.fxml;
-    opens com.serenity.entity to jakarta.persistence;
+    opens com.serenity.entity to org.hibernate.orm.core;
+
 
     exports com.serenity;
 
