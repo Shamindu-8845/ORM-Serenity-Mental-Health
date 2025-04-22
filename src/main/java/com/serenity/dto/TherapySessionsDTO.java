@@ -14,17 +14,17 @@ public class TherapySessionsDTO {
     private int therapy;
     private int patient;
     private int program;
-    /*private double cost;
-    private String description;*/
+    /*private double cost;*/
+    private String description;
     private Date date;
 
 
-    public TherapySessionsDTO(int therapy, int patient, int program/*double cost, String description*/,Date date) {
+    public TherapySessionsDTO(int therapy, int patient, int program,/*double cost,*/ String description,Date date) {
         this.therapy=therapy;
         this.patient=patient;
         this.program=program;
-        /*this.cost=cost;
-        this.description=description;*/
+       /* this.cost=cost;*/
+        this.description=description;
         this.date =date;
     }
 }

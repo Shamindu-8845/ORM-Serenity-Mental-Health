@@ -33,7 +33,7 @@ public class PatientManagementBOImpl implements PatientManagementBO {
         List<Patients> all = patientsDAO.getAll();
         List<PatientsDTO> patientsDTOS = new ArrayList<>();
         for (Patients patients:all){
-            patientsDTOS.add(new PatientsDTO(patients.getName(),patients.getGender(),patients.getPhoneNo()));
+            patientsDTOS.add(new PatientsDTO(patients.getId(),patients.getGender(),patients.getPhoneNo(),patients.getName()));
         }
 
         return patientsDTOS;
@@ -56,7 +56,7 @@ public class PatientManagementBOImpl implements PatientManagementBO {
         List<PatientsDTO> patientsDTOS = new ArrayList<>();
 
         for (Patients patients:search){
-            patientsDTOS.add(new PatientsDTO(patients.getName(),patients.getGender(),patients.getPhoneNo()));
+            patientsDTOS.add(new PatientsDTO(patients.getId(),patients.getGender(),patients.getPhoneNo(),patients.getName()));
         }
 
         return patientsDTOS;

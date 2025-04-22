@@ -24,12 +24,14 @@ public class PatientsDTO {
             this.phoneNo =phoneNo;
     }
 
-    public PatientsDTO(String name/*String duration, double cost, String description*/,String gender,String phoneNo) {
+    public PatientsDTO(String name/*String duration, double cost, String description*/,String gender,String phoneNo,int id) {
         this.name=name;
       /*  this.duration=duration;
         this.cost=cost;
         this.description=description;*/
         this.gender = gender;
         this.phoneNo =  phoneNo;
+        this.id =id;
     }
+
 }

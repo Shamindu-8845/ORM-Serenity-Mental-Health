@@ -5,16 +5,14 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.serenity.controllers.PatientHistoryFormController">
    <children>
       <TableView fx:id="tblPatientHistory" layoutX="4.0" layoutY="200.0" prefHeight="200.0" prefWidth="592.0">
         <columns>
           <TableColumn fx:id="colTherapy" prefWidth="92.800048828125" text="Therapy" />
-          <TableColumn fx:id="colPatient" prefWidth="101.5999755859375" text="Patient" />
-            <TableColumn fx:id="colProgram" prefWidth="113.5999755859375" text="Program" />
-            <TableColumn fx:id="colCost" prefWidth="127.199951171875" text="Cost" />
-            <TableColumn fx:id="colDescription" prefWidth="132.800048828125" text="Description" />
+          <TableColumn fx:id="colPatient" prefWidth="175.199951171875" text="Patient" />
+            <TableColumn fx:id="colProgram" prefWidth="136.800048828125" text="Program" />
+            <TableColumn fx:id="colDescription" prefWidth="186.40008544921875" text="Description" />
         </columns>
       </TableView>
       <Label layoutX="238.0" layoutY="28.0" text="Patient Theropy History" />

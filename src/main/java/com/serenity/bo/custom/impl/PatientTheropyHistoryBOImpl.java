@@ -22,12 +22,19 @@ public class PatientTheropyHistoryBOImpl implements PatientTheropyHistoryBO {
     public List<TherapySessionsDTO> getAll() throws IOException {
 
         List<TherapySessions> all = therapySessionsDAO.getAll();
-
         List<TherapySessionsDTO> therapySessionsDTOS = new ArrayList<>();
 
-        for (TherapySessions therapySessions:all) {
-            therapySessionsDTOS.add(new TherapySessionsDTO(therapySessions.getId(),therapySessions.getTherapyPrograms().getId(),therapySessions.getPatients().getId(),therapySessions.getTherapyPrograms().getId(),therapySessions.getDate()));
+        for (TherapySessions therapySessions : all) {
+            therapySessionsDTOS.add(new TherapySessionsDTO(
+                    therapySessions.getId(),                              // id
+                    therapySessions.getTherapyPrograms().getId(),         // therapy
+                    therapySessions.getPatients().getId(),                // patient
+                    therapySessions.getTherapyPrograms().getId(),         // program
+                    therapySessions.getTherapyPrograms().getDescription(),                     // description
+                    therapySessions.getDate()                             // date
+            ));
         }
+
         return therapySessionsDTOS;
     }
 }
