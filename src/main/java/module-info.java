@@ -14,6 +14,7 @@ module Serenity.Mental.Health {
     opens com.serenity.controllers to javafx.fxml;
     opens com.serenity to javafx.fxml;
     opens com.serenity.entity to org.hibernate.orm.core;
+    opens com.serenity.tm to javafx.base;
 
 
     exports com.serenity;

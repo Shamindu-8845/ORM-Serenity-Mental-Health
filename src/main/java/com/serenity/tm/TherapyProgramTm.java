@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class TherapyProgramTm {
+    private String programId;
     private String name;
     private String duration;
     private double cost;
