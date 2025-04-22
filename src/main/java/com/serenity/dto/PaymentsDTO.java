@@ -1,14 +1,14 @@
 package com.serenity.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.sql.Date;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@Getter
+@Setter
 public class PaymentsDTO {
     private int id;
     private int theropy;
@@ -26,4 +26,12 @@ public class PaymentsDTO {
         this.date = date;
         this.method = method;
     }
+
+    public Date getDate() {
+        return date;
+    }
+    public void setDate(Date date) { this.date = date; }
+
+    public String getMethod() { return method; }
+    public void setMethod(String method) { this.method = method; }
 }

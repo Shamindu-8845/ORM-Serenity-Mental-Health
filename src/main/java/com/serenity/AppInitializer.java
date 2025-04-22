@@ -3,6 +3,7 @@ package com.serenity;
 
 import com.serenity.config.FactoryConfiguration;
 import com.serenity.entity.Users;
+import com.serenity.util.PasswordUtil;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -23,15 +24,16 @@ public class AppInitializer extends Application {
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
 
-        Users users = new Users();
+      /*  Users users = new Users();
         users.setId(1);
         users.setName("Shamindu");
-        users.setPassword("1234");
+        users.setPassword(PasswordUtil.hashPassword("1234"));
         users.setJobRole("Admin");
 
         session.save(users);
         transaction.commit();
         session.close();
+*/
     }
 
     public static void main(String[] args) {

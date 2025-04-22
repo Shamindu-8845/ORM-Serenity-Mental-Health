@@ -9,6 +9,7 @@ module Serenity.Mental.Health {
     requires jakarta.persistence;
     requires static lombok;
     requires com.jfoenix;
+    requires jbcrypt;
 
     opens com.serenity.controllers to javafx.fxml;
     opens com.serenity to javafx.fxml;

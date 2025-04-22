@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -15,6 +16,12 @@ public class ReceptionistDashBoardController {
 
     @FXML
     private AnchorPane optionAnchorPane;
+
+    @FXML
+    private Label lblName;
+
+    @FXML
+    private Label lblPassword;
 
     @FXML
     void onActionPatients(ActionEvent event) throws IOException {
@@ -49,5 +56,10 @@ public class ReceptionistDashBoardController {
         Stage currentStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         currentStage.setScene(new Scene(root));
         currentStage.show();
+    }
+
+    public void setValues(String name, String password) {
+        lblName.setText(name);
+        lblPassword.setText(password);
     }
 }

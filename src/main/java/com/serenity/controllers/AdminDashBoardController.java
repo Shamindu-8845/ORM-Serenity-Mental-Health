@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.Window;
@@ -16,6 +17,12 @@ public class AdminDashBoardController {
 
     @FXML
     public AnchorPane optionAnchorPane;
+    @FXML
+    private Label lblName;
+
+    @FXML
+    private Label lblPassword;
+
 
     @FXML
     void onActionChangeCredentails(ActionEvent event) throws IOException{
@@ -54,4 +61,10 @@ public class AdminDashBoardController {
         currentStage.setScene(new Scene(root));
         currentStage.show();
     }
+
+    public void setValue(String name, String password) {
+        lblName.setText(name);
+        lblPassword.setText(password);
+    }
+
 }

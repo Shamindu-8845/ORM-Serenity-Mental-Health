@@ -18,6 +18,8 @@
                   <Font size="24.0" />
                </font>
             </Label>
+            <Label fx:id="lblName" layoutX="272.0" layoutY="56.0" prefHeight="26.0" prefWidth="62.0" />
+            <Label fx:id="lblPassword" layoutX="341.0" layoutY="56.0" prefHeight="26.0" prefWidth="62.0" />
          </children>
       </AnchorPane>
       <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onActionLoginForm" prefHeight="26.0" prefWidth="50.0" text="Home" />
