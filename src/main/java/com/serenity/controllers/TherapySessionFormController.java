@@ -125,10 +125,11 @@ public class TherapySessionFormController implements Initializable {
         return new TherapySessionsDTO(
                 therapySessionId,
                 Integer.parseInt(therapy),
-                Integer.parseInt(patient), // Convert patient ID to integer
-                Integer.parseInt(program), // Convert program ID to integer
-                description,               // Therapy session description
-                sessionDate                // Therapy session date
+                Integer.parseInt(patient),
+                Integer.parseInt(program),
+                Double.parseDouble("null"), // ✅ Add cost here
+                description,
+                sessionDate
         );
     }
 

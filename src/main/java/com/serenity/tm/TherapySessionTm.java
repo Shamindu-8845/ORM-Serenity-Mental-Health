@@ -15,6 +15,6 @@ public class TherapySessionTm {
     private int program;
     private Date date;
     private String description;
-    /*private Double cost;*/
+    private Double cost;
 
 }

@@ -74,7 +74,10 @@ public class PaymentFormController implements Initializable {
 
     @FXML
     void onActionReset(ActionEvent event) {
-
+        refreshPage();
+        loadTables();
+        loadIds();
+        btnSave.setText("Save");
     }
 
     @FXML
@@ -154,6 +157,9 @@ public class PaymentFormController implements Initializable {
         txtStatus.clear();
         cmbTherapy.setValue("");
         cmbPatient.setValue("");
+        txtdate.clear();
+        txtStatus.clear();
+        txtmethod.clear();
     }
 
     private void setValues() {

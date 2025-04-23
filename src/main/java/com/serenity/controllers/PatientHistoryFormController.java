@@ -34,6 +34,8 @@ public class PatientHistoryFormController implements Initializable {
 
     @FXML
     private TableView<TherapySessionTm> tblPatientHistory;
+    @FXML
+    private TableColumn<TherapySessionTm,Double> colCost;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -42,6 +44,7 @@ public class PatientHistoryFormController implements Initializable {
         colPatient.setCellValueFactory(new PropertyValueFactory<>("patient"));
         colProgram.setCellValueFactory(new PropertyValueFactory<>("program"));
         colDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
+        colDescription.setCellValueFactory(new PropertyValueFactory<>("cost"));
         loadTables();
     }
 
@@ -61,11 +64,17 @@ public class PatientHistoryFormController implements Initializable {
                 // Debugging output for each TherapySessionDTO
                 System.out.println("Therapy ID: " + therapySessionsDTO.getTherapy() + ", Patient ID: " + therapySessionsDTO.getPatient());
 
-                objects.add(
-                        new TherapySessionTm(therapySessionsDTO.getTherapy(), therapySessionsDTO.getPatient(), therapySessionsDTO.getProgram(), therapySessionsDTO.getDate(), therapySessionsDTO.getDescription()));
+                objects.add(new TherapySessionTm(
+                        therapySessionsDTO.getTherapy(),
+                        therapySessionsDTO.getPatient(),
+                        therapySessionsDTO.getProgram(),
+                        therapySessionsDTO.getDate(),
+                        therapySessionsDTO.getDescription(),
+                        therapySessionsDTO.getCost() // ✅ FIXED: method call with correct case
+                ));
             }
 
-            tblPatientHistory.setItems(objects);
+                tblPatientHistory.setItems(objects);
         } catch (IOException e) {
             e.printStackTrace();
             throw new RuntimeException(e);

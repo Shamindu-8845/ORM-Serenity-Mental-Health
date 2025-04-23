@@ -19,7 +19,7 @@ public class TherapySessionsDTO {
     private int therapy;
     private int patient;
     private int program;
-    /*private double cost;*/
+    private double cost;
     private String description;
     private Date date;
 

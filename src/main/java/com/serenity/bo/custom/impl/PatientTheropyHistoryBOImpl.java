@@ -26,14 +26,16 @@ public class PatientTheropyHistoryBOImpl implements PatientTheropyHistoryBO {
 
         for (TherapySessions therapySessions : all) {
             therapySessionsDTOS.add(new TherapySessionsDTO(
-                    therapySessions.getId(),                              // id
-                    therapySessions.getTherapyPrograms().getId(),         // therapy
-                    therapySessions.getPatients().getId(),                // patient
-                    therapySessions.getTherapyPrograms().getId(),         // program
-                    therapySessions.getTherapyPrograms().getDescription(),                     // description
-                    therapySessions.getDate()                             // date
+                    therapySessions.getId(),                                   // id
+                    therapySessions.getTherapyPrograms().getId(),              // therapy
+                    therapySessions.getPatients().getId(),                     // patient
+                    therapySessions.getTherapyPrograms().getId(),              // program
+                    therapySessions.getTherapyPrograms().getCost(),            // ✅ cost
+                    therapySessions.getTherapyPrograms().getDescription(),     // description
+                    therapySessions.getDate()                                  // date
             ));
         }
+
 
         return therapySessionsDTOS;
     }
