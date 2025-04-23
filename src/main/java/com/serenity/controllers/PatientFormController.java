@@ -107,14 +107,21 @@ public class PatientFormController implements Initializable {
 
     public void searchTherapySession(ActionEvent actionEvent) {
         try {
-            String text = txtSearch.getText();
+            String text = txtSearch.getText(); // Retrieve search text
+            // Call the BO to search patients based on the input text
             List<PatientsDTO> patientsDTOS = patientManagementBO.searchPatient(text);
+
+            // Convert the retrieved DTOs to TableModel objects for display
             ObservableList<PatientsTm> objects = FXCollections.observableArrayList();
             for (PatientsDTO patientsDTO : patientsDTOS) {
+                // No modifications, just display the data
                 objects.add(new PatientsTm(patientsDTO.getId(), patientsDTO.getName(), patientsDTO.getGender(), patientsDTO.getPhoneNo()));
             }
+
+            // Set the data into the TableView for display
             tblPatient.setItems(objects);
-        }catch (IOException e){
+        } catch (IOException e) {
+            // Handle errors (e.g., connection issue, invalid data)
             throw new RuntimeException(e);
         }
     }

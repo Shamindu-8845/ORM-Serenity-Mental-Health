@@ -47,10 +47,11 @@ public class PaymentInvoiceManagementBOImpl implements PaymentInvoiceManagementB
         Therapists therapists = therapistDAO.getbyId(paymentsDTO.getTheropy());
 
         Payments payments = new Payments(
+                paymentsDTO.getId(),
                 paymentsDTO.getPayment(),
                 paymentsDTO.getMethod(),
                 paymentsDTO.getDate(),
-                paymentsDTO.getMethod(),
+                paymentsDTO.getStatus(),
                 patients,
                 therapists
         );
@@ -101,6 +102,7 @@ public class PaymentInvoiceManagementBOImpl implements PaymentInvoiceManagementB
                     payments.getTherapists().getId(),
                     payments.getPatients().getId(),
                     payments.getPayment(),
+                    payments.getStatus(),
                     payments.getDate(),
                     payments.getMethod()
             ));

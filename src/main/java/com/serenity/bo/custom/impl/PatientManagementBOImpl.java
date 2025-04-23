@@ -52,13 +52,24 @@ public class PatientManagementBOImpl implements PatientManagementBO {
 
     @Override
     public List<PatientsDTO> searchPatient(String text) throws IOException {
+        // Check if the text is null or empty before proceeding
+        if (text == null || text.trim().isEmpty()) {
+            return new ArrayList<>();
+        }
+
+        // Perform search on name, gender, or phoneNo based on the attributes of the Patients entity
         List<Patients> search = patientsDAO.search(text);
         List<PatientsDTO> patientsDTOS = new ArrayList<>();
 
-        for (Patients patients:search){
-            patientsDTOS.add(new PatientsDTO(patients.getId(),patients.getGender(),patients.getPhoneNo(),patients.getName()));
+        // Iterate through the result list and convert Patients entities to PatientsDTO
+        for (Patients patients : search) {
+            patientsDTOS.add(new PatientsDTO(
+                    patients.getId(),
+                    patients.getGender(),
+                    patients.getPhoneNo(),
+                    patients.getName()
+            ));
         }
-
         return patientsDTOS;
     }
 }

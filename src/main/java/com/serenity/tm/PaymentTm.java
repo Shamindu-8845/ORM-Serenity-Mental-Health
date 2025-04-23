@@ -13,7 +13,7 @@ public class PaymentTm {
     private int therapy;
     private int patient;
     private double payment;
-    /*private String status;*/
+    private String status;
     private Date date;
     private String method;
 }

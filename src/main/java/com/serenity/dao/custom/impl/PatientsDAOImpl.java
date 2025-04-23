@@ -6,6 +6,7 @@ import com.serenity.config.FactoryConfiguration;
 import com.serenity.dao.custom.PatientsDAO;
 /*import org.example.entity.Patients;*/
 import com.serenity.entity.Patients;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -76,13 +77,15 @@ public class PatientsDAOImpl implements PatientsDAO {
 
     @Override
     public List<Patients> search(String text) throws IOException {
-        Session session = FactoryConfiguration.getInstance().getSession();
-
-        return session.createQuery("FROM Patients p WHERE p.name like :name OR p.duration like :duration " +
-                "OR p.description like :description").
-                setParameter("name",text).setParameter("duration",text).
-                setParameter("description",text).list();
-
+        try (Session session = FactoryConfiguration.getInstance().getSession()) {
+            return session.createQuery("FROM Patients p WHERE p.name like :name OR p.gender like :gender OR p.phoneNo like :phoneNo", Patients.class)
+                    .setParameter("name", "%" + text + "%")
+                    .setParameter("gender", "%" + text + "%")
+                    .setParameter("phoneNo", "%" + text + "%")
+                    .list();
+        } catch (HibernateException e) {
+            throw new IOException("Error searching for patients: " + e.getMessage(), e);
+        }
     }
 
     @Override

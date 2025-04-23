@@ -14,18 +14,34 @@ import java.io.IOException;
 import java.util.List;
 
 public class PaymentsDAOImpl implements PaymentsDAO {
+
+
     @Override
     public boolean save(Payments payments) throws IOException {
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
 
-        session.persist(payments);
+        try {
+            // Save or update the payment based on its ID
+            if (payments.getId() == 0) {
+                session.save(payments);  // Save new payment
+            } else {
+                session.update(payments);  // Update existing payment if ID is non-zero
+            }
 
-        transaction.commit();
-        session.close();
-
-        return true;
+            transaction.commit();
+            return true;
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+            return false;
+        } finally {
+            session.close();
+        }
     }
+
 
     @Override
     public boolean update(Payments payments) throws IOException {

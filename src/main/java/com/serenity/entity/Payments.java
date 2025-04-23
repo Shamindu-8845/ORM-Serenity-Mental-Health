@@ -21,9 +21,14 @@ public class Payments {
     private String status;
     private Date date;
     private String method;
-    @ManyToOne(cascade = CascadeType.ALL)
+    /*@ManyToOne(cascade = CascadeType.ALL)
     private Patients patients;
     @ManyToOne(cascade = CascadeType.ALL)
+    private Therapists therapists;*/
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private Patients patients;
+
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Therapists therapists;
 
     public Payments(double payment, String status,Date date,String method, Patients patients, Therapists therapists) {
