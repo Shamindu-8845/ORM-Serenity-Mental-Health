@@ -34,19 +34,36 @@ public class TherapySessionSchedulingBOImpl implements TherapySessionSchedulingB
     TherapistDAO therapistDAO = (TherapistDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.THERAPIST);
     @Override
     public boolean saveTherapySession(TherapySessionsDTO therapySessionsDTO) throws IOException {
+        // Fetch the related entities by their IDs from the database.
+        Patients patient = patientsDAO.getbyId(therapySessionsDTO.getPatient());
+        TherapyPrograms program = therapyProgramsDAO.getbyId(therapySessionsDTO.getProgram());
+        Therapists therapist = therapistDAO.getbyId(therapySessionsDTO.getTherapy());
 
-        Patients patients = patientsDAO.getbyId(therapySessionsDTO.getPatient());
-        TherapyPrograms therapyPrograms = therapyProgramsDAO.getbyId(therapySessionsDTO.getProgram());
-        Therapists therapists = therapistDAO.getbyId(therapySessionsDTO.getTherapy());
-        return therapySessionsDAO.save(new TherapySessions(therapySessionsDTO.getDate(), patients, therapists, therapyPrograms));
-    }
+        // Create the TherapySessions entity using the fetched data.
+        TherapySessions session = new TherapySessions(
+                therapySessionsDTO.getDate(),
+                patient,
+                therapist,
+                program,
+                therapySessionsDTO.getDescription()
+        );
+
+        // Save the session entity using the DAO, possibly using merge if the entity already exists.
+        return therapySessionsDAO.save(session); // Ensure .save uses `merge` if needed
+        }
 
     @Override
     public boolean updateTherapySession(TherapySessionsDTO therapySessionsDTO) throws IOException {
         Patients patients = patientsDAO.getbyId(therapySessionsDTO.getPatient());
         TherapyPrograms therapyPrograms = therapyProgramsDAO.getbyId(therapySessionsDTO.getProgram());
         Therapists therapists = therapistDAO.getbyId(therapySessionsDTO.getTherapy());
-        return therapySessionsDAO.update(new TherapySessions(therapySessionsDTO.getDate(),patients, therapists, therapyPrograms));
+        return therapySessionsDAO.update( new TherapySessions(
+                therapySessionsDTO.getDate(),
+                patients,
+                therapists,
+                therapyPrograms,
+                therapySessionsDTO.getDescription()
+        ));
     }
 
     @Override

@@ -16,14 +16,21 @@ public class TherapySessionsDAOImpl implements TherapySessionsDAO {
     @Override
     public boolean save(TherapySessions therapySessions) throws IOException {
         Session session = FactoryConfiguration.getInstance().getSession();
-        Transaction transaction = session.beginTransaction();
+        Transaction transaction = null;
+        try {
+            transaction = session.beginTransaction();
 
-        session.persist(therapySessions);
+            session.merge(therapySessions); // 🔥 Use merge instead of persist
 
-        transaction.commit();
-        session.close();
-
-        return true;
+            transaction.commit();
+            return true;
+        } catch (Exception e) {
+            if (transaction != null) transaction.rollback();
+            e.printStackTrace();
+            return false;
+        } finally {
+            session.close();
+        }
     }
 
     @Override
@@ -42,12 +49,17 @@ public class TherapySessionsDAOImpl implements TherapySessionsDAO {
     @Override
     public int getLastId() throws IOException {
         Session session = FactoryConfiguration.getInstance().getSession();
-        List<TherapySessions> fromTherapySessions = session.createQuery("FROM TherapySessions ", TherapySessions.class).list();
+        List<TherapySessions> fromTherapySessions = session.createQuery("FROM TherapySessions", TherapySessions.class).list();
 
-        if (fromTherapySessions.isEmpty()){
+        if (fromTherapySessions.isEmpty()) {
             return 1;
         }
-        return (int) session.createQuery("SELECT ts.id FROM TherapySessions ts ORDER BY ts.id DESC").setMaxResults(1).uniqueResult();
+
+        int lastId = (int) session.createQuery("SELECT ts.id FROM TherapySessions ts ORDER BY ts.id DESC")
+                .setMaxResults(1)
+                .uniqueResult();
+
+        return lastId + 1;
     }
 
     @Override

@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.serenity.controllers.TherapySessionFormController">
    <children>
       <Label layoutX="226.0" layoutY="14.0" text="Therapy Session Form">
@@ -29,7 +28,9 @@
       <ComboBox fx:id="cmbPatientId" layoutX="192.0" layoutY="208.0" prefWidth="150.0" promptText="Patient" />
       <Label layoutX="69.0" layoutY="264.0" text="Session date" />
       <TextField fx:id="txtSessionDate" layoutX="192.0" layoutY="260.0" promptText="2025/04/20" />
-      <Button layoutX="137.0" layoutY="318.0" mnemonicParsing="false" onAction="#onActionSave" prefHeight="26.0" prefWidth="110.0" text="Save" />
-      <Button layoutX="286.0" layoutY="318.0" mnemonicParsing="false" onAction="#onActionReset" prefHeight="26.0" prefWidth="110.0" text="Reset" />
+      <Button fx:id="btnSave" layoutX="109.0" layoutY="371.0" mnemonicParsing="false" onAction="#onActionSave" prefHeight="26.0" prefWidth="110.0" text="Save" />
+      <Button layoutX="286.0" layoutY="371.0" mnemonicParsing="false" onAction="#onActionReset" prefHeight="26.0" prefWidth="110.0" text="Reset" />
+      <Label layoutX="69.0" layoutY="311.0" text="description" />
+      <TextField fx:id="txtDescription" layoutX="192.0" layoutY="307.0" promptText="2025/04/20" />
    </children>
 </AnchorPane>

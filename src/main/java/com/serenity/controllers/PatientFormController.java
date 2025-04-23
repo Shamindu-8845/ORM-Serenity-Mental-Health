@@ -111,7 +111,7 @@ public class PatientFormController implements Initializable {
             List<PatientsDTO> patientsDTOS = patientManagementBO.searchPatient(text);
             ObservableList<PatientsTm> objects = FXCollections.observableArrayList();
             for (PatientsDTO patientsDTO : patientsDTOS) {
-                objects.add(new PatientsTm(patientsDTO.getId(), patientsDTO.getGender(), patientsDTO.getPhoneNo(), patientsDTO.getName()));
+                objects.add(new PatientsTm(patientsDTO.getId(), patientsDTO.getName(), patientsDTO.getGender(), patientsDTO.getPhoneNo()));
             }
             tblPatient.setItems(objects);
         }catch (IOException e){
@@ -154,7 +154,7 @@ public class PatientFormController implements Initializable {
             ObservableList<PatientsTm> objects = FXCollections.observableArrayList();
 
             for (PatientsDTO patientsDTO:allPatients){
-                objects.add(new PatientsTm(patientsDTO.getId(),patientsDTO.getGender(),patientsDTO.getPhoneNo(),patientsDTO.getName()));
+                objects.add(new PatientsTm(patientsDTO.getId(),patientsDTO.getGender(),patientsDTO.getName(),patientsDTO.getPhoneNo()));
             }
 
             tblPatient.setItems(objects);
